@@ -7,6 +7,7 @@
 
 #include <string>
 #include <stdexcept>
+#include <cstdint>
 
 using std::string;
 
@@ -37,7 +38,7 @@ namespace prg2 {
     // Obtem o valor associado à chave
     // Se chave não existir, dispara uma exceção std::invalid_argument
     template <typename V>
-    V& thash_obtem(thash<V> & tab, const string & chave);
+    V thash_obtem(thash<V> & tab, const string & chave);
 
     // Remove da tabela uma chave e seu valor asdociado
     // Se chave não existir, dispara uma exceção std::invalid_argument
@@ -51,5 +52,8 @@ namespace prg2 {
     // Retorna a quantidade de chaves armazenadas na tabela
     template <typename V>
     uint32_t thash_tamanho(const thash<V> & tab);
+
 }
+
+#include "thash-impl.h"
 #endif //THASH_THASH_H
